@@ -1,0 +1,9 @@
+docker run --rm -it \
+  --network host \
+  --runtime nvidia \
+  -e DISPLAY=$DISPLAY \
+  -e QT_X11_NO_MITSHM=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  -v $PWD/output:/data/output \
+  -e CAMERA_ID=Camera_1 \
+  edge-yolo:orin
