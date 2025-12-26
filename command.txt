@@ -1,3 +1,4 @@
+# Local Display
 docker run --rm -it \
   --network host \
   --runtime nvidia \
@@ -7,3 +8,6 @@ docker run --rm -it \
   -v $PWD/output:/data/output \
   -e CAMERA_ID=Camera_1 \
   edge-yolo:orin
+
+# Remote Display
+sudo docker run --rm -it   --network host   --runtime nvidia   -e DISPLAY=$DISPLAY   -e XAUTHORITY=/tmp/.Xauthority   -e QT_X11_NO_MITSHM=1  -e LIBGL_ALWAYS_INDIRECT=1  -e QT_OPENGL=software  -v $HOME/.Xauthority:/tmp/.Xauthority:ro   -v $PWD/output:/data/output   -e CAMERA_ID=Camera_1   caltrans-davis:orin

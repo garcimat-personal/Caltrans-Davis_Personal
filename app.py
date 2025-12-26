@@ -744,7 +744,7 @@ try:
 
         # Write + display
         # out.write(frame)
-        cv2.imshow("Tracking", frame)
+        # cv2.imshow("Tracking", frame)
 
         # Rotate clip every OUTPUT_VIDEO_LENGTH minutes
         # if now >= current_clip_start + timedelta(minutes=OUTPUT_VIDEO_LENGTH):
@@ -753,8 +753,8 @@ try:
             # out = cv2.VideoWriter(output_video_path, fourcc, fps, (width, height))
 
         # Exit on 'q'
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+        # if cv2.waitKey(1) & 0xFF == ord("q"):
+        #     break
 
 except KeyboardInterrupt:
     print("Interrupted by user (Ctrl+C) — exiting...")
@@ -779,8 +779,8 @@ finally:
     except Exception:
         pass
 
-    try:
-        cv2.destroyAllWindows()
+    # try:
+    #     cv2.destroyAllWindows()
     except Exception:
         pass
 
